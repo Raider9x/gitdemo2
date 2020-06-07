@@ -1,0 +1,139 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>User</title>
+</head>
+<body>
+<style>
+
+    #header{
+
+
+    }
+    #search{
+
+        margin-top:10px;
+        margin-right: 600px;
+        float:right;
+        width: 700px;
+    }
+    form.example button:hover {
+        background: #0b7dda;
+    }
+    form.example input[type=text] {
+        padding: 5px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 60%;
+        background: #f1f1f1;
+    }
+    form.example button {
+        float: inherit;
+        width: 10%;
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 10px;
+        border: 1px solid grey;
+
+        cursor: pointer;
+    }
+    #header_div1 {
+        display: inline;
+        width:120px;
+        height:5px;
+        font-size: 40px;
+    }
+
+
+    #contentProfile {
+        border: 1px solid blue;
+    }
+
+
+    #videocontent{
+        float:left;
+        white-space: normal;
+    }
+
+
+    #avatar{
+        display:block;
+        width:100%;
+
+    }
+    #avatar img{
+        border-radius: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 200px;
+    }
+
+    #content{
+        display:inline-block;
+        width:1000px;
+
+
+    }
+
+
+    #bodyblock{
+
+        display:inline-block;
+        width:300px;
+        height: 350px;
+        margin-top: 100px;
+        margin-left: 10px;
+    }
+    #vid {
+        font-size: 25px;
+        text-align: center;
+    }
+#detail{
+    font-size: 25px;
+    text-align: center;
+}
+</style>
+
+
+
+
+
+<% include header.ejs %>
+
+<div id="content">
+    <% for(var i=0;i<data.ava.length;i++){ %>
+    <div id="bodyblock">
+        <div id="avatar">
+            <a href="http://localhost:8000/user/<%= data.user[i].substring(1) %>">
+                <img src="<%= data.ava[i] %>">
+            </a>
+        </div>
+        <div id="vid">
+            <%= data.vid[i]%> Videos
+        </div>
+        <%var t = 0;%>
+        <% if(i === 0){ t = i;} else { t = i +2; } %>
+        <div id="detail">
+            <%=data.following[t]%> Following <br> <%=data.following[t+1]%> Followers <br><%=data.following[t+2]%> Hearts<br>
+        </div>
+    </div>
+    <%}%>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

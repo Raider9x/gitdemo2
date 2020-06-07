@@ -1,0 +1,169 @@
+[
+  {
+    "name": "sessionid_ss",
+    "value": "f0eb5b8b35d559cec5da384c5686ff8a",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1596554685.750437,
+    "size": 44,
+    "httpOnly": true,
+    "secure": true,
+    "session": false,
+    "sameSite": "None"
+  },
+  {
+    "name": "sid_tt",
+    "value": "f0eb5b8b35d559cec5da384c5686ff8a",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1596554685.75041,
+    "size": 38,
+    "httpOnly": true,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "uid_tt_ss",
+    "value": "21d9b96c2455da132f1c6f08802077b058f175fe4c5f9ecb2e28ea5a165927fa",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1596554685.750391,
+    "size": 73,
+    "httpOnly": true,
+    "secure": true,
+    "session": false,
+    "sameSite": "None"
+  },
+  {
+    "name": "passport_csrf_token",
+    "value": "0f934e3abc583c76e340205c3a7a72a8",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1591377869.195399,
+    "size": 51,
+    "httpOnly": false,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "uid_tt",
+    "value": "21d9b96c2455da132f1c6f08802077b058f175fe4c5f9ecb2e28ea5a165927fa",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1596554685.750377,
+    "size": 70,
+    "httpOnly": true,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "sid_guard",
+    "value": "f0eb5b8b35d559cec5da384c5686ff8a%7C1591370686%7C5184000%7CTue%2C+04-Aug-2020+15%3A24%3A46+GMT",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1622474685.750362,
+    "size": 102,
+    "httpOnly": true,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "tt_webid",
+    "value": "6834884946873304577",
+    "domain": "www.tiktok.com",
+    "path": "/",
+    "expires": -1,
+    "size": 27,
+    "httpOnly": true,
+    "secure": true,
+    "session": true
+  },
+  {
+    "name": "sessionid",
+    "value": "f0eb5b8b35d559cec5da384c5686ff8a",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1596554685.750425,
+    "size": 41,
+    "httpOnly": true,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "SLARDAR_WEB_ID",
+    "value": "c04cef81-dad5-4e29-8754-de6e55cb9ed8",
+    "domain": ".www.tiktok.com",
+    "path": "/",
+    "expires": 1599146690.014286,
+    "size": 50,
+    "httpOnly": false,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "_gat_gtag_UA_144727112_1",
+    "value": "1",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1591370725,
+    "size": 25,
+    "httpOnly": false,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "_gid",
+    "value": "GA1.2.278901196.1591370665",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1591457090,
+    "size": 30,
+    "httpOnly": false,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "_ga",
+    "value": "GA1.2.448284305.1591370665",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1654442690,
+    "size": 29,
+    "httpOnly": false,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_kb2d07wk_F9kyKdhD_GVvM_4oHy_9gUT_QDPW4p0UFraK",
+    "domain": "www.tiktok.com",
+    "path": "/",
+    "expires": -1,
+    "size": 62,
+    "httpOnly": false,
+    "secure": false,
+    "session": true
+  },
+  {
+    "name": "passport_auth_status",
+    "value": "6f80eecbd9265c42237a666a7ae62b0a%2C",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1593962685.750333,
+    "size": 55,
+    "httpOnly": true,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "tt_webid_v2",
+    "value": "6834884946873304577",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1622906664.58641,
+    "size": 30,
+    "httpOnly": true,
+    "secure": true,
+    "session": false
+  }
+]

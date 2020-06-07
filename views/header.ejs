@@ -1,0 +1,137 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>TikTokWeb</title>
+</head>
+<body>
+<style>
+
+    #header_div1 {
+        display: inline-block;
+        width:10px;
+        height:5px;
+        margin-left: 60px;
+        font-size: 40px;
+
+    }
+    #header_div2 {
+        display: inline-block;
+        width:120px;
+        height:5px;
+        margin-left: 30px;
+        font-size: 40px;
+
+    }
+    #search{
+
+        margin-top:10px;
+        margin-right: 600px;
+        float:right;
+        width: 700px;
+    }
+    form.example button:hover {
+        background: #0b7dda;
+    }
+    form.example input[type=text] {
+        padding: 5px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 60%;
+        background: #f1f1f1;
+    }
+    form.example button {
+        float: inherit;
+        width: 10%;
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 10px;
+        border: 1px solid grey;
+
+        cursor: pointer;
+    }
+    #list{
+
+        margin-right: -900px;
+        margin-top: 20px;
+        float: right;
+        list-style-image: url('/public/images/Flags/usa.png');
+    }
+    #list button{
+        display:none;
+    }
+</style>
+
+
+
+
+
+<div id="header">
+    <div id="header_div1"><img src="https://s16.tiktokcdn.com/tiktok/falcon/_next/static/images/logo-dark-e95da587b6efa1520dcd11f4b45c0cf6.svg" alt="Italian Trulli"></div>
+
+    <div id="header_div2">
+        <a href="http://localhost:8000">
+            <img src="https://s16.tiktokcdn.com/tiktok/falcon/_next/static/images/logo-text-dark-673b189595b95d8bbf2ab1783ae2ab25.svg" alt="Italian Trulli">
+        </a></div>
+    <div id="search">
+
+        <form class="example">
+            <input type="text" id="searchinput" placeholder="Search user, #tag or $musicID ">
+
+            <button type="button"  id="idbtn" onclick="mySearch()"><i class="fa fa-search"></i></button>
+        </form>
+
+    </div>
+</div>
+
+
+<script>
+
+    var input = document.getElementById("searchinput");
+
+    // Execute a function when the user releases a key on the keyboard
+    input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("idbtn").click();
+        }
+    });
+
+    function mySearch() {
+        var x = document.getElementById("searchinput").value;
+        var res = x.charAt(0);
+        if(res === "#"){
+            window.location.href = '../searchTag/'+x.substr(1);
+        }
+        else if(res === "$"){
+            window.location.href = '../searchMusicID/'+x.substr(1);
+        }
+        else {
+            window.location.href = '../searchUser/'+x;
+        }
+    }
+
+    var testVariable;
+    function getUniqueValues(){
+
+        for(var i = 0; i < this.options.length; i++){
+            if(this.options[i].selected){
+                testVariable = this.options[i].value;
+                alert(testVariable);
+                if(testVariable === "Orange"){
+
+                }
+            }
+
+        }
+
+    }
+
+</script>

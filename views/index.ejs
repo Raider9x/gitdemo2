@@ -1,0 +1,185 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>MusicID</title>
+</head>
+<body>
+<style>
+#body{
+    margin-top: 100px;
+    display: inline-block;
+    width: 70%;
+    height: auto;
+
+}
+#khung{
+   float:left;
+    display: inline-block;
+
+    width: 250px;
+    height: 350px;
+    margin-left: 50px;
+    margin-top: 20px;
+
+}
+#ava{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+
+    float:left;
+}
+#ava img{
+    border-radius: 50%;
+    width: 60px;
+    border: 1px solid black;
+}
+#userandname{
+     margin-left: 7px;
+        display: inline-block;
+        width: 150px;
+         height: 55px;
+
+        float:left;
+
+}
+    #name{
+        font-size: 20px;
+    }
+
+    #videocontent img{
+        width: 200px;
+        height: 260px;
+        object-fit: cover;
+        border: 1px solid black;
+    }
+#playcount {
+    text-shadow: 0 0 5px #000000;
+    font-size: 20px;
+    position: absolute;
+    bottom: -5px;
+    left: 8px;
+    top: 82%;
+}
+#content{
+    display:block;
+    width:200px;
+    height: 260px;
+    margin-left: 0px;
+    margin-top: 70px;
+
+    position: relative;
+    text-align: center;
+    color: white;
+}
+    #text{
+       display: inline-block;
+
+        position: absolute;
+        margin-top: 60px;
+    }
+    #list{
+        display: inline-block;
+
+        position: absolute;
+        margin-top: 60px;
+
+    }
+
+
+
+
+#list select {
+    background-color: #0563af;
+    color: white;
+    padding: 8px;
+    width: 130px;
+    border: none;
+    font-size: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+
+
+    outline: none;
+}
+
+#list::before {
+
+}
+
+#list:hover::before {
+
+}
+
+#list select option {
+    padding: 10px;
+}
+
+</style>
+
+
+
+
+
+<% include header.ejs %>
+
+<div id="list" class="box">
+    <form action="/" method="post">
+        </form>
+        <select id="attributeNames" onchange="this.form.submit()" name="attributeNames">
+            <option input type="hidden" value="USA" name="USA" <%= selectedUSA%>> United States </option>
+            <option input type="hidden" value="Japan" name="Japan" <%= selectedJapan%>> Japan </option>
+        </select>
+        <button type="submit" class="btn btn-warning btn-lg">Wallet</button>
+    </form>
+
+</div>
+<br>
+<div id ="text"> <b style="font-size:28px"> New Tiktok</b></div>
+
+<div id="body">
+
+
+
+        <%for(var i=0;i<data.length;i++){%>
+    <div id="khung">
+        <div id="ava">
+            <a href = "http://localhost:8000/user/<%= data[i].nick%>">
+                <img src='<%= data[i].ava %>' >
+            </a>
+        </div>
+
+        <div id="userandname">
+            <div id="name">
+                <b><%= data[i].nick%></b>
+            </div>
+            <div id="nickname">
+                <%= data[i].name %>
+            </div>
+        </div>
+        <div id="content" class ="container">
+            <div id="videocontent"><a href="http://localhost:8000/home/<%= data[i].videoid %>/index/<%= data[i].id%>"><img src="https://www.tiktok.com/api/img/?itemId=<%= data[i].videoid%>&location=0"></a></div>
+            <%if(parseFloat(data[i].hearts) < 10000){%><div id="playcount"><b style="font-size:28px">♡</b><b><%=parseInt(data[i].hearts)%></b></div><%}
+            else if(parseFloat(data[i].hearts) < 1000000) {%>  <div id="playcount"><b style="font-size:30px">♡</b><b><%=parseFloat(data[i].hearts/1000).toFixed(1)%>K</b></div> <%}
+            else {%>  <div id="playcount"><b style="font-size:30px">♡</b><b><%=parseFloat(data[i].hearts/1000000).toFixed(1)%>M</b></div> <%}%>
+        </div>
+    </div>
+        <% }%>
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
+<script>
+    export const vl ="123";
+</script>
+
+
+

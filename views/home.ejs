@@ -1,0 +1,242 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Video</title>
+</head>
+<body>
+
+<style>
+
+    #header{
+
+
+    }
+    #header_div1 {
+        display: inline;
+        width:120px;
+        height:5px;
+
+        font-size: 40px;
+    }
+
+
+    #body video{
+        margin-top:20px;
+        margin-left: 90px;
+        background-color: black;
+    }
+    #body{
+        float:left;
+
+    }
+    #gocphai{
+        margin-top:20px;
+        float:left;
+        margin-left: 50px;
+        display: inline-block;
+
+        height: 90%;
+
+    }
+    #user{
+        display:inline;
+        width:70px;
+        height:70px;
+
+        font-size: 40px;
+        float:left;
+
+
+    }
+    #user img {
+        border-radius: 50%;
+        width:70px;
+        height:70px;
+        border: 1px solid red;
+    }
+    #bodyall{
+
+
+    }
+    #username a{
+        font-size: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+    #comment{
+        display:block;
+        width:600px;
+        height: 70%;
+        position: relative;
+        overflow: scroll;
+        margin-top: 25px;
+
+    }
+    #userANDname{
+        display:block;
+        width:520px;
+        height:70px;
+        margin-left: 80px;
+
+    }
+
+    #nickname{
+        font-size: 20px;
+    }
+
+    #des{
+        display:inline-block;
+        width:600px;
+
+        font-size: 16px;
+        margin-top: 5px;
+
+
+    }
+    #music{
+        margin-top: 15px;
+        font-size: 20px;
+    }
+    #avaUser{
+        width:70px;
+        height: 70px;
+
+        display:inline-block;
+        float: left;
+    }
+    #avaUser img{
+        border-radius: 50%;
+        width:100%;
+
+    }
+    #textUser{
+        display:inline-block;
+        margin-left: 10px;
+        width:490px;
+        height: auto;
+        min-height: 15%;
+        margin-top: 0px;
+        font-size: 15px;
+
+        float: left;
+    }
+    #ads{
+        float:left;
+        margin-left: 10px;
+        width:400px;
+        height:800px;
+
+    }
+    #nextbutton{
+        float:left;
+        margin-top: 400px;
+        margin-left: 5px;
+
+
+    }
+    #nextbutton img{
+
+        width:30px;
+        height:40px;
+
+    }
+    #heart{
+        font-size: 18px;
+    }
+    #heart b{
+        font-size: 18px;
+    }
+    #heart img{
+        width:20px;
+        height:20px;
+        object-fit: cover;
+    }
+    #next{
+
+    }
+
+</style>
+
+
+
+
+<% include header.ejs %>
+
+<div id="bodyall" class="classall">
+    <div id="body">
+        <video id="video" width="650" height="800" controls autoplay>
+            <source src="<%= data.video %>" type="video/mp4"></video>
+    </div>
+    <div id="next">
+
+
+    </div>
+
+    <div id="gocphai">
+        <div id="user" class="avatarclass">
+            <a href="http://localhost:8000/user/<%= data.user %>">
+                <img src="<%= data.avatar %>">
+            </a>
+        </div>
+        <div id="userANDname">
+            <div id="username" class="namelink">
+                <% if(data.veri == true){ %>
+                <a href="http://localhost:8000/user/<%= data.userlink %>"> <%= data.user%></a>
+                <img src='http://s16.tiktokcdn.com/tiktok/falcon/_next/static/images/icon_checked-58a305f9a95cb2c0e2a24daf636f5c12.svg'>
+                <% }  else {%><a href="http://localhost:8000/user/<%= data.userlink %>"> <%= data.user%></a> <%}%>
+            </div>
+            <div id="nickname" class="nickname">
+                <%= data.nickname%>
+            </div>
+        </div>
+        <div id="des">
+            <%=data.des %>
+            <div id="music">
+                <a href="http://localhost:8000/searchMusicID/<%= data.music_link %>">     <b>  ♫ <%= data.music %></b> </a>
+            </div> <br>
+            <div id="heart">
+                <b><img src="http://s16.tiktokcdn.com/tiktok/falcon/_next/static/images/like-inactive-d771e860459cfdd012d82f9c44791ace.svg">&nbsp;<%=data.heart%></b> &nbsp;&nbsp;
+                <b><img src="http://s16.tiktokcdn.com/tiktok/falcon/_next/static/images/comment-85150c34ed75254a6a731ff76d676890.svg">&nbsp;<%=data.commentCount%></b>
+            </div>
+        </div>
+        <div id="comment" >
+            <% if(data.comment !== undefined){  %>
+            <% for(var i=0;i<data.comment.length;i++){ %>
+            <div id="avaUser">
+                <a href="http://localhost:8000/user/<%= data.usercommentid[i]%>">
+                    <img src="<%= data.avaUser[i] %>">
+                </a>
+            </div>
+            <div id="textUser">
+                <b><%=data.usercomment[i]%></b> <br>
+                <%=data.comment[i]%>
+            </div>
+            <%}%>
+            <%}%>
+
+        </div>
+    </div>
+</div>
+<div id="nextbutton">
+    <a href="http://localhost:8000/home/<%= data.nextid%>/index/<%= data.nextindex %>">
+        <img src="/images/button1.png" height="20">
+    </a>
+</div>
+
+
+<div id ="ads">
+
+</div>
+
+
+
+
+</body>
+</html>
+
+<script>
+    history.pushState({}, null, "http://localhost:8000/home/<%= data.idvideo %>/index/<%= data.index%>");
+</script>
